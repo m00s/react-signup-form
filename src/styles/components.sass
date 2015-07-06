@@ -1,8 +1,56 @@
-@import "colors"
+@import colors
 
-.moze-button
-  background-color: $primary-color;
-  color: $secondary-color;
-  &:hover
-    background-color: $secondary-color;
-    color: $primary-color;
+.moze-input
+  font-size: 1em
+  display: inline-block
+  margin: auto
+  border-radius: 0.3em
+  border: 2px solid rgb(126, 126, 126)
+  outline: none
+  padding: 0.5em 0.5em
+  font-weight: 100
+  font-family: Arial
+  margin: 0.2em 1em 0.2em 1em
+  width: 80%
+
+.focus
+  border: 2px solid rgb(0, 0, 0)
+
+.moze-input-valid
+  @extend .moze-input
+  border: 2px solid rgb(126, 126, 126)
+
+.moze-input-invalid
+  @extend .moze-input
+  border: 2px solid $invalid
+
+.input_error_icon
+  width: 20px
+
+.validationIcons
+  margin: 0
+  padding: 0
+  display: inline-block
+  width: 20px
+  position: absolute
+  float: right
+
+.form-input
+  width: 85%
+
+.input-container
+  width: 80%
+  margin-left: auto
+  margin-right: auto
+
+.input-label
+  display: block
+  padding-left: 1em
+  margin-top: 1em
+
+.input-error
+  display: block
+  padding-left: 1.6em
+  font-size: 0.6em
+  color: $invalid
+  margin: 0.1em 0 1em 0

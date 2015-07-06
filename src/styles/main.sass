@@ -3,12 +3,17 @@
 
 html
   body
-     background: $main-background;
+    background: $main-background
+
+  input
+    border: none
+    &:focus
+      border: none
+      outline: 0
 
 .moze-signup-form
-  width: 30%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  background: $form-background;
-  text-align: center;
+  width: 30%
+  height: 100%
+  margin: 2em auto 0 auto
+  padding: 1em 0 0 0
+  background: $form-background
