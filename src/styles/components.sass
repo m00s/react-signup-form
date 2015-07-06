@@ -1,28 +1,53 @@
-@import colors
+@import vars
+@import mixin
 
 .moze-input
   font-size: 1em
   display: inline-block
   margin: auto
   border-radius: 0.3em
-  border: 2px solid rgb(126, 126, 126)
+  border: 2px solid $valid
   outline: none
   padding: 0.5em 0.5em
   font-weight: 100
   font-family: Arial
   margin: 0.2em 1em 0.2em 1em
   width: 80%
+  +border-transition(border-color, 0.3s, linear)
+
++placeholder($text-color, 0.8em)
 
 .focus
-  border: 2px solid rgb(0, 0, 0)
+  border: 2px solid $black
 
 .moze-input-valid
   @extend .moze-input
-  border: 2px solid rgb(126, 126, 126)
+  border: 2px solid $valid
 
 .moze-input-invalid
   @extend .moze-input
   border: 2px solid $invalid
+  +border-transition(border-color, 0.1s, linear)
+
+.fb-container
+  width: 95%
+  margin: auto
+  height: 70px
+
+.fb-button
+  background-color: $facebook-blue
+  border-radius: 0.3em
+  color: $white
+  font-size: 0.8em
+  font-weight: 400
+  width: 91%
+  outline: none
+  height: 60%
+  margin: 0 1em 0 0.8em
+  .fb-logo
+    font: 1.4em Lucida Sans solid
+    font-weight: 600
+    line-height: 1.4em
 
 .input_error_icon
   width: 20px
@@ -36,17 +61,19 @@
   float: right
 
 .form-input
-  width: 85%
+  width: 90%
 
 .input-container
-  width: 80%
+  width: 85%
+  height: 70px
   margin-left: auto
   margin-right: auto
 
 .input-label
   display: block
-  padding-left: 1em
+  padding-left: 1.2em
   margin-top: 1em
+  font-size: 0.85em
 
 .input-error
   display: block

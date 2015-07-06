@@ -1,0 +1,20 @@
+=border-transition($attr, $duration, $type)
+  -webkit-transition: $attr $duration $type
+  -moz-transition: $attr $duration $type
+  -o-transition: $attr $duration $type
+  -ms-transition: $attr $duration $type
+  transition: $attr $duration $type
+
+=placeholder($color, $size)
+  ::-webkit-input-placeholder
+    color: $color
+    font-size: $size
+  :-moz-placeholder
+    color: $color
+    font-size: $size
+  ::-moz-placeholder
+    color: $color
+    font-size: $size
+  :-ms-input-placeholder
+    color: $color
+    font-size: $size
