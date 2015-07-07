@@ -2,7 +2,10 @@
 
 var React = require('react/addons');
 var MozeInput = require('components/MozeInput');
+var FacebookButton = require('components/FacebookButton');
+var PhotoUpload = require('components/PhotoUpload');
 var validators = require('components/validators');
+var ToggleSwitch = require('components/ToggleSwitch');
 
 require('normalize.css');
 require('../styles/main.sass');
@@ -41,24 +44,29 @@ var MozeSignupForm = React.createClass({
       password: validators.password
     };
   },
+  onFormSubmit: function(e){
+    e.preventDefault();
+  },
   render: function(){
     var v = this.validate();
     return (
-      <form className="moze-signup-form">
+      <form className="moze-signup-form" onSubmit={this.onFormSubmit}>
+        <FacebookButton></FacebookButton>
+        <PhotoUpload className="photo-upload"></PhotoUpload>
         <MozeInput valid={!v.name.invalid(this.state.name)}
                className='moze-input'
-               label='Your name'
+               label='Your Name'
                value={this.state.name}
                message={v.name.message}
                onChange={this.onNameChange}
-               placeholder='type your name'/>
+               placeholder='Type your name'/>
        <MozeInput valid={!v.email.invalid(this.state.email)}
               className='moze-input'
               label='Email address'
               value={this.state.email}
               message={v.email.message}
               onChange={this.onEmailChange}
-              placeholder='type an email'/>
+              placeholder='Type your email'/>
       <MozeInput valid='true'
             className='moze-input'
             label='Password'
@@ -69,11 +77,12 @@ var MozeSignupForm = React.createClass({
             placeholder='Choose a password'/>
       <MozeInput valid={!v.password.invalid(this.state.password, this.state.repeat)}
             className='moze-input'
-            label='Password'
+            label=''
             value={this.state.repeat}
             message={v.password.message}
             onChange={this.onRepeatChange}
             placeholder='Repeat password'/>
+      <ToggleSwitch></ToggleSwitch>
       </form>
     );
   }

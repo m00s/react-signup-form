@@ -57,25 +57,26 @@ var MozeInput = React.createClass({
     var inputClass = this.props.className;
     var placeholder = this.props.placeholder;
     var value = this.props.value;
-    var label = this.props.label;
+    var label = this.props.label !== '' ? <label className="input-label">{this.props.label}</label> : '';
     var valid = this.props.valid;
-    var icon = '', message = '';
 
+    var icon = '', message = '';
     if (this.state.validationStarted) {
       if(valid){
+        inputClass += '-valid';
         message = icon = '';
       }
       else{
         inputClass += '-invalid';
         message = this.props.message;
-        icon = <Icon type="circle_error"/>;
+        icon = <Icon type="cross-error"/>;
       }
     }
 
     inputClass = this.state.isFocused ? inputClass + ' focus' : inputClass;
 
     return (<div className="input-container">
-    <label className="input-label">{label}</label>
+    {label}
     <div className={inputClass}>
     <input
       className="form-input"

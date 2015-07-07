@@ -21,7 +21,7 @@
   > .switch
     display: inline-block
 
-$switchTransition: 0.15s ease-out
+$switchTransition: 0.25s ease-out
 
 .switch
   position: relative
@@ -32,9 +32,7 @@ $switchTransition: 0.15s ease-out
   padding: 3px
   background-color: white
   border-radius: 18px
-  //box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(black, 0.05)
   cursor: pointer
-  //+linear-gradient(top, #eeeeee, white 25px)
 
 .switch-input
   position: absolute
@@ -51,7 +49,6 @@ $switchTransition: 0.15s ease-out
   text-transform: uppercase
   background: #eceeef
   border-radius: inherit
-  //box-shadow: inset 0 1px 2px rgba(black, 0.12), inset 0 0 2px rgba(black, 0.15)
   +transition($switchTransition)
   +transition-property(opacity background)
   &:before, &:after
@@ -73,7 +70,6 @@ $switchTransition: 0.15s ease-out
     opacity: 0
   .switch-input:checked ~ &
     background: #47a8d8
-    //box-shadow: inset 0 1px 2px rgba(black, 0.15), inset 0 0 3px rgba(black, 0.2)
     &:before
       opacity: 0
     &:after
@@ -87,7 +83,6 @@ $switchTransition: 0.15s ease-out
   height: 15px
   background: white
   border-radius: 10px
-  //box-shadow: 1px 1px 5px rgba(black, 0.2)
   +linear-gradient(top, white 40%, #f0f0f0)
   +transition(left #{$switchTransition})
   &:before
@@ -100,11 +95,9 @@ $switchTransition: 0.15s ease-out
     height: 13px
     background: #f9f9f9
     border-radius: 6px
-    //box-shadow: inset 0 1px rgba(black, 0.02)
     +linear-gradient(top, #eeeeee, white)
   .switch-input:checked ~ &
     left: 43px
-    //box-shadow: -1px 1px 5px rgba(black, 0.2)
 
 .switch-green > .switch-input:checked ~ .switch-label
   background: $switch-background

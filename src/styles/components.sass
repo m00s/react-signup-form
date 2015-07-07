@@ -6,7 +6,7 @@
   display: inline-block
   margin: auto
   border-radius: 0.3em
-  border: 2px solid $valid
+  border: 2px solid $default
   outline: none
   padding: 0.5em 0.5em
   font-weight: 100
@@ -15,10 +15,10 @@
   width: 93%
   +border-transition(border-color, 0.3s, linear)
 
-+placeholder($text-color, 0.8em)
++placeholder($default, 0.8em)
 
 .focus
-  border: 2px solid $black
+  border: 2px solid $focus !important
 
 .moze-input-valid
   @extend .moze-input
@@ -26,7 +26,7 @@
 
 .moze-input-invalid
   @extend .moze-input
-  border: 2px solid $invalid
+  border: 2px solid $invalid !important
   +border-transition(border-color, 0.1s, linear)
 
 .fb-container
