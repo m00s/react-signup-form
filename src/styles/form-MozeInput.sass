@@ -4,19 +4,31 @@
 .moze-input
   font-size: 1em
   display: inline-block
-  margin: auto
   border-radius: 0.3em
   border: 2px solid $default
   outline: none
-  padding: 0.5em 0.5em
+  height: 40px
+  line-height: 40px
   font-weight: 100
   font-family: Arial
   margin: 0.2em auto 0.2em auto
-  width: 93%
+  width: 100%
   +border-transition(border-color, 0.3s, linear)
+  input
+    line-height: 1.2em
+.form-signup
+  width:100%
+  height: 100%
+  background-color: $signup-button
+  color: $white
+  text-transform: uppercase
+.form-signup[disabled]
+  background-color: $signup-button-disable
 
-.no-padding
-  padding: 0 0 0 0 !important
+.signup-input
+  @extend .moze-input
+  line-height: 35px
+  font-size: 0.95em
 
 +placeholder($default, 0.8em)
 
@@ -32,24 +44,9 @@
   border: 2px solid $invalid !important
   +border-transition(border-color, 0.1s, linear)
 
-.fb-container
-  width: 100%
-  margin: auto
-  height: 70px
-
-.fb-button
-  background-color: $facebook-blue
-  border-radius: 0.3em
-  color: $white
-  font-size: 0.8em
-  font-weight: 400
-  width: 100%
-  outline: none
-  height: 60%
-  .fb-logo
-    font: 1.4em Lucida Sans solid
-    font-weight: 600
-    line-height: 1.4em
+.moze-input-no-label
+  @extend .moze-input
+  margin-top: 1.2em
 
 .input_error_icon
   width: 20px
@@ -61,24 +58,30 @@
   width: 20px
   position: absolute
   float: right
+  line-height: 50px
 
 .form-input
-  width: 90%
+  width: 80%
+  margin-left: 1em
 
 .input-container
   width: 75%
-  height: 70px
+  height: 75px
   margin-left: auto
   margin-right: auto
 
 .input-label
-  display: block
-  margin-top: 1em
+  display: inline-block
+  margin-top: 0.5em
   font-size: 0.85em
 
 .input-error
   display: block
-  padding-left: 1.6em
   font-size: 0.6em
   color: $invalid
   margin: 0.1em 0 1em 0
+
+.asterisk
+  width: 5px
+  height: 13px
+  padding: 0 0 0 3px

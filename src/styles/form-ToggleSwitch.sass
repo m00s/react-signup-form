@@ -3,8 +3,7 @@
 
 .privacy-policy
   width: 75%
-  margin-left: auto
-  margin-right: auto
+  margin: 1em auto 1em auto
   .privacy-text
     display: inline
     font-size: 0.65em
@@ -12,33 +11,32 @@
     line-height: 3em
     .underline
       text-decoration: underline
+      cursor: pointer
+
+$switchTransition: 0.25s ease-out
 
 .toggle-switch-container
   display: inline
-  margin: 50px auto auto 40px
+  margin: 50px auto auto 35px
   width: 280px
   text-align: center
   > .switch
     display: inline-block
-
-$switchTransition: 0.25s ease-out
-
-.switch
-  position: relative
-  display: inline-block
-  vertical-align: top
-  width: 60px
-  height: 23px
-  padding: 3px
-  background-color: white
-  border-radius: 18px
-  cursor: pointer
-
-.switch-input
-  position: absolute
-  top: 0
-  left: 0
-  opacity: 0
+  .switch
+    position: relative
+    display: inline-block
+    vertical-align: top
+    width: 60px
+    height: 23px
+    padding: 3px
+    background-color: white
+    border-radius: 18px
+    cursor: pointer
+    .switch-input
+      position: absolute
+      top: 0
+      left: 0
+      opacity: 0
 
 .switch-label
   position: relative
