@@ -1,9 +1,9 @@
 'use strict';
 
 var React = require('react/addons');
-var Icon = require('components/Icon');
+var Icon = require('components/utils/Icon');
 
-require('styles/PhotoUpload.sass');
+require('styles/form-PhotoUpload.sass');
 
 var PhotoUpload = React.createClass({
   getInitialState: function() {
@@ -26,18 +26,23 @@ var PhotoUpload = React.createClass({
     if(file instanceof Blob){
       reader.readAsDataURL(file);
     }
+
+    if(this.props.onChange) {
+      this.props.onChange(file);
+    }
   },
   render: function () {
     var containerClass = this.state.inputLoaded ? this.props.className + ' content-loaded' : this.props.className;
     var preview = this.state.inputLoaded ? <div className="img-preview"><img src={this.state.dataUri} id="preview"/></div> : '';
     var button = this.state.inputLoaded ? '' : <button className="upload-button">
-    <Icon type="circle-error"/>
+    <Icon type="upload"/>
     <label>Upload you favourite picture</label>
     </button>;
-    return (<div className={containerClass}>
-        {button}
-        <input type="file" name="file1" onChange={this.onInputChange}/>
-        {preview}
+    return (
+        <div className={containerClass}>
+          {button}
+          <input type="file" onChange={this.onInputChange}/>
+          {preview}
         </div>);
   }
 });

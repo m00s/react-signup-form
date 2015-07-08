@@ -2,8 +2,7 @@
 
 var React = require('react/addons');
 
-
-require('styles/GenderSelect.sass');
+require('styles/form-GenderSelect.sass');
 
 var GenderSelect = React.createClass({
   getInitialState: function() {
@@ -20,7 +19,6 @@ var GenderSelect = React.createClass({
     this.state.gender = 'Female';
   },
   render: function () {
-    //var value = this.props.value || 'M';
     var cx = React.addons.classSet;
     var maleClasses = cx({
         'gender': true,
@@ -34,7 +32,7 @@ var GenderSelect = React.createClass({
     return (
       <div className="input-container">
         <label className="input-label">{this.props.label}</label>
-        <div className={this.props.className}>
+        <div className='moze-input'>
             <div className={maleClasses}>
               <button onClick={this.onMaleClick}>Male</button>
             </div>

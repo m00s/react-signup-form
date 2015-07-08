@@ -30,14 +30,14 @@ const required = {
   message: 'This field is required.'
 };
 const email = {
-  name: 'email',
+  label: 'Email Address',
   invalid: function(value) {
     return (_isSupplied(value) && !EMAIL_PATTERN.test(value)) || (!_isSupplied(value));
   },
   message: 'Insert a valid Email address'
 };
 const password = {
-  name: 'password',
+  label: 'Password',
   invalid: function(p1, p2) {
     if(!_isSupplied(p1)) {
       this.message = 'Password must be non-empty';
@@ -48,7 +48,7 @@ const password = {
       return true;
     }
     if(!(p1 === p2)) {
-      this.message = 'Password must match';
+      this.message = 'Passwords must match';
       return true;
     }
     return false;

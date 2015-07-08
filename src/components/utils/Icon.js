@@ -1,11 +1,29 @@
 var React = require('react/addons');
 
 var Icon = React.createClass({
-
   render: function() {
     switch(this.props.type) {
-
-      case 'circle-error':
+      case 'asterisk':
+        return (
+            <svg viewBox="0 0 1000 1000" className="asterisk">
+              <g>
+                <path d="M826.956 585.964q25.668 14.508 33.201 43.245t-6.975
+                54.405l-35.712 61.38q-14.508 25.668 -43.245 33.201t-54.405
+                -6.975l-148.428 -85.374v171.306q0 29.016 -21.204 50.22t-50.22
+                21.204h-71.424q-29.016 0 -50.22 -21.204t-21.204
+                -50.22v-171.306l-148.428 85.374q-25.668 14.508 -54.405 6.975t-43.245
+                -33.201l-35.712 -61.38q-14.508 -25.668 -6.975 -54.405t33.201
+                -43.245l148.428 -85.932 -148.428 -85.932q-25.668 -14.508 -33.201
+                -43.245t6.975 -54.405l35.712 -61.38q14.508 -25.668 43.245
+                -33.201t54.405 6.975l148.428 85.374v-171.306q0 -29.016 21.204
+                -50.22t50.22 -21.204h71.424q29.016 0 50.22 21.204t21.204
+                50.22v171.306l148.428 -85.374q25.668 -14.508 54.405
+                -6.975t43.245 33.201l35.712 61.38q14.508 25.668 6.975 54.405t-33.201
+                43.245l-148.428 85.932z" fill="#B8860B"/>
+              </g>
+            </svg>
+        );
+      case 'upload':
         return (
           <div className="upload-svg">
           <i>
@@ -29,8 +47,8 @@ var Icon = React.createClass({
              <title>red cross</title>
              <g>
               <g id="layer1">
-               <path fill="#ff0000" fill-rule="evenodd" stroke-width="0.25pt" id="path4950" d="m98,60l-40,40l170,170l40,-40l-170,-170z"/>
-               <path fill="#ff0000" fill-rule="evenodd" stroke-width="0.25pt" id="path4952" d="m58,230l170,-170l40,40l-170,170l-40,-40z"/>
+               <path fill="#ff0000" fill-rule="evenodd" strokeWidth="0.25pt" id="path4950" d="m98,60l-40,40l170,170l40,-40l-170,-170z"/>
+               <path fill="#ff0000" fill-rule="evenodd" strokeWidth="0.25pt" id="path4952" d="m58,230l170,-170l40,40l-170,170l-40,-40z"/>
               </g>
              </g>
             </svg>

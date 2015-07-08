@@ -1,52 +1,67 @@
 @import vars
 @import mixin
 
-.moze-input
-  font-size: 1em
-  display: inline-block
-  border-radius: 0.3em
-  border: 2px solid $default
-  outline: none
-  height: 40px
-  line-height: 40px
-  font-weight: 100
-  font-family: Arial
-  margin: 0.2em auto 0.2em auto
-  width: 100%
-  +border-transition(border-color, 0.3s, linear)
-  input
-    line-height: 1.2em
-.form-signup
-  width:100%
-  height: 100%
-  background-color: $signup-button
-  color: $white
-  text-transform: uppercase
-.form-signup[disabled]
-  background-color: $signup-button-disable
+.input-container
+  width: 75%
+  min-height: 80px
+  margin-left: auto
+  margin-right: auto
+  .moze-input
+    font-size: 1em
+    display: inline-block
+    border-radius: 0.3em
+    border: 2px solid $default
+    outline: none
+    height: 40px
+    line-height: 40px
+    font-weight: 100
+    font-family: Arial
+    margin: 0.2em auto 0.2em auto
+    width: 100%
+    +border-transition(border-color, 0.3s, linear)
+    input
+      line-height: 1.2em
+  .moze-input-valid
+    @extend .moze-input
+    border: 2px solid $valid
+  .moze-input-invalid
+    @extend .moze-input
+    border: 2px solid $invalid !important
+    +border-transition(border-color, 0.1s, linear)
+  .moze-input-no-label
+    @extend .moze-input
+    margin-top: 1.2em
+  .input-label
+    display: inline-block
+    font-size: 0.85em
+  .input-error
+    display: block
+    font-size: 0.6em
+    font-weight: normal
+    color: $invalid
+    margin: 0.1em 0 1em 0
 
 .signup-input
   @extend .moze-input
+  border: 2px solid $signup-button
   line-height: 35px
   font-size: 0.95em
+  .form-signup
+    width:100%
+    height: 100%
+    background-color: $signup-button
+    color: $white
+    text-transform: uppercase
+  .form-signup[disabled]
+    background-color: $signup-button-disable
+
+.signup-input[disabled]
+  border: 2px solid $signup-button-disable !important
 
 +placeholder($default, 0.8em)
 
 .focus
   border: 2px solid $focus !important
-
-.moze-input-valid
-  @extend .moze-input
-  border: 2px solid $valid
-
-.moze-input-invalid
-  @extend .moze-input
-  border: 2px solid $invalid !important
-  +border-transition(border-color, 0.1s, linear)
-
-.moze-input-no-label
-  @extend .moze-input
-  margin-top: 1.2em
 
 .input_error_icon
   width: 20px
@@ -64,24 +79,11 @@
   width: 80%
   margin-left: 1em
 
-.input-container
-  width: 75%
-  height: 75px
-  margin-left: auto
-  margin-right: auto
-
-.input-label
-  display: inline-block
-  margin-top: 0.5em
-  font-size: 0.85em
-
-.input-error
-  display: block
-  font-size: 0.6em
-  color: $invalid
-  margin: 0.1em 0 1em 0
-
 .asterisk
   width: 5px
   height: 13px
   padding: 0 0 0 3px
+
+.c-height
+  height: auto !important
+  min-height: 65px !important

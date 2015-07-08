@@ -1,10 +1,10 @@
 'use strict';
 
 var React = require('react/addons');
-var Icon = require('components/Icon');
+var Icon = require('components/utils/Icon');
 var _ = require('lodash');
 
-require('../styles/components.sass');
+require('../styles/form-MozeInput.sass');
 
 var MozeInput = React.createClass({
   getInitialState: function(){
@@ -26,11 +26,9 @@ var MozeInput = React.createClass({
       startValidation();
     }
     else {
-      //this.prepareToValidate = _.debounce(startValidation, 1000);
-      this.prepareToValidate = _.debounce(startValidation, 0);
+      this.prepareToValidate = _.debounce(startValidation, 1000);
     }
   },
-
 
   handleChange: function(e){
     if (!this.state.validationStarted) {
@@ -54,29 +52,30 @@ var MozeInput = React.createClass({
   },
 
   render: function(){
-    var inputClass = this.props.className;
+    var containerClass = this.props.containerClass || 'input-container';
+    var inputClass = this.props.className || 'moze-input';
     var placeholder = this.props.placeholder;
     var value = this.props.value;
-    var label = this.props.label !== '' ? <label className="input-label">{this.props.label}</label> : '';
+    var label = this.props.label ? <label className="input-label">{this.props.label}</label> : '';
+    var req = this.props.required ? <Icon type="asterisk"/> : '';
     var valid = this.props.valid;
 
-    var icon = '', message = '';
+    var icon = '', message = this.props.message ? <label className='input-error'></label> : '';
     if (this.state.validationStarted) {
       if(valid){
         inputClass += '-valid';
-        message = icon = '';
       }
       else{
         inputClass += '-invalid';
-        message = this.props.message;
+        message = this.props.message ? <label className='input-error'>{this.props.message}</label> : '';
         icon = <Icon type="cross-error"/>;
       }
     }
 
     inputClass = this.state.isFocused ? inputClass + ' focus' : inputClass;
 
-    return (<div className="input-container">
-    {label}
+    return (<div className={containerClass}>
+    {label}{req}
     <div className={inputClass}>
     <input
       className="form-input"
@@ -85,7 +84,7 @@ var MozeInput = React.createClass({
         onChange={this.handleChange}
         onFocus={this.onFocusHandler}
         onBlur={this.onBlurHandler} />{icon}
-        </div><label className='input-error'>{message}</label>
+        </div>{message}
     </div>);
   }
 });
