@@ -1,8 +1,8 @@
 {
   "name": "mozesignupform",
-  "version": "0.0.0",
-  "description": "",
-  "repository": "",
+  "version": "1.0.0",
+  "description": "An awesome ReactJS signup form",
+  "repository": "https://github.com/mozestudio/moze-massimiliano.git",
   "private": true,
   "src": "src",
   "test": "test",
