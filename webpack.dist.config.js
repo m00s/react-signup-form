@@ -18,7 +18,7 @@ module.exports = {
 
   debug: false,
   devtool: false,
-  entry: './src/components/MozeSignupForm.js',
+  entry: './src/components/SignupForm.js',
 
   stats: {
     colors: true,

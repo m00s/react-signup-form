@@ -2,7 +2,7 @@
 
 var React = require('react/addons');
 var validators = require('components/utils/validators');
-var MozeInput = require('components/MozeInput');
+var Input = require('components/Input');
 var FacebookButton = require('components/FacebookButton');
 var PhotoUpload = require('components/PhotoUpload');
 var ToggleSwitch = require('components/ToggleSwitch');
@@ -12,7 +12,7 @@ var Signup = require('components/Signup');
 require('normalize.css');
 require('../styles/form-Main.sass');
 
-var MozeSignupForm = React.createClass({
+var SignupForm = React.createClass({
   getInitialState: function(){
     return {
       name: '',
@@ -90,7 +90,7 @@ var MozeSignupForm = React.createClass({
     var isValid = this.validateForm();
 
     return (
-      <form className="moze-signup-form" onSubmit={this.onFormSubmit}>
+      <form className="signup-form" onSubmit={this.onFormSubmit}>
         <FacebookButton></FacebookButton>
         <div className="separator">
           <span> OR </span>
@@ -98,21 +98,21 @@ var MozeSignupForm = React.createClass({
         <PhotoUpload
           className="photo-upload"
           onChange={this.onFileUpload}/>
-        <MozeInput valid={!v.name.invalid(this.state.name)}
+        <Input valid={!v.name.invalid(this.state.name)}
                 label='Your Name'
                 value={this.state.name}
                 message={v.name.message}
                 onChange={this.onNameChange}
                 placeholder='Type your name'
                 required />
-        <MozeInput valid={!v.email.invalid(this.state.email)}
+        <Input valid={!v.email.invalid(this.state.email)}
               label={v.email.label}
               value={this.state.email}
               message={v.email.message}
               onChange={this.onEmailChange}
               placeholder='Type your email'
               required/>
-        <MozeInput valid='true'
+        <Input valid='true'
               containerClass="input-container c-height"
               label={v.password.label}
               value={this.state.password}
@@ -120,7 +120,7 @@ var MozeSignupForm = React.createClass({
               onFocus={this.onFocusHandler}
               placeholder='Choose a password'
               required/>
-        <MozeInput valid={!v.password.invalid(this.state.password, this.state.repeat)}
+        <Input valid={!v.password.invalid(this.state.password, this.state.repeat)}
               containerClass="input-container c-height"
               value={this.state.repeat}
               message={v.password.message}
@@ -137,6 +137,6 @@ var MozeSignupForm = React.createClass({
   }
 });
 
-React.render(<MozeSignupForm />, document.getElementById('content'));
+React.render(<SignupForm />, document.getElementById('content'));
 
-module.exports = MozeSignupForm;
+module.exports = SignupForm;

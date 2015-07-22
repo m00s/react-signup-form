@@ -4,9 +4,9 @@ var React = require('react/addons');
 var Icon = require('components/utils/Icon');
 var _ = require('lodash');
 
-require('../styles/form-MozeInput.sass');
+require('../styles/form-Input.sass');
 
-var MozeInput = React.createClass({
+var Input = React.createClass({
   getInitialState: function(){
     return {
       validationStarted: false,
@@ -53,7 +53,7 @@ var MozeInput = React.createClass({
 
   render: function(){
     var containerClass = this.props.containerClass || 'input-container';
-    var inputClass = this.props.className || 'moze-input';
+    var inputClass = this.props.className || 'input';
     var placeholder = this.props.placeholder;
     var value = this.props.value;
     var label = this.props.label ? <label className="input-label">{this.props.label}</label> : '';
@@ -89,4 +89,4 @@ var MozeInput = React.createClass({
   }
 });
 
-module.exports = MozeInput;
+module.exports = Input;

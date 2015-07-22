@@ -32,7 +32,7 @@ var GenderSelect = React.createClass({
     return (
       <div className="input-container">
         <label className="input-label">{this.props.label}</label>
-        <div className='moze-input'>
+        <div className='input'>
             <div className={maleClasses}>
               <button onClick={this.onMaleClick}>Male</button>
             </div>

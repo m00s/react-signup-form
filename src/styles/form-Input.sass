@@ -6,7 +6,7 @@
   min-height: 80px
   margin-left: auto
   margin-right: auto
-  .moze-input
+  .input
     font-size: 1em
     display: inline-block
     border-radius: 0.3em
@@ -21,15 +21,15 @@
     +border-transition(border-color, 0.3s, linear)
     input
       line-height: 1.2em
-  .moze-input-valid
-    @extend .moze-input
+  .input-valid
+    @extend .input
     border: 2px solid $valid
-  .moze-input-invalid
-    @extend .moze-input
+  .input-invalid
+    @extend .input
     border: 2px solid $invalid !important
     +border-transition(border-color, 0.1s, linear)
-  .moze-input-no-label
-    @extend .moze-input
+  .input-no-label
+    @extend .input
     margin-top: 1.2em
   .input-label
     display: inline-block
@@ -42,7 +42,7 @@
     margin: 0.1em 0 1em 0
 
 .signup-input
-  @extend .moze-input
+  @extend .input
   border: 2px solid $signup-button !important
   line-height: 35px
   font-size: 0.95em

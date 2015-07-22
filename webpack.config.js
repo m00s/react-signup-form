@@ -19,7 +19,7 @@ module.exports = {
   devtool: 'sourcemap',
   entry: [
       'webpack/hot/only-dev-server',
-      './src/components/MozeSignupForm.js'
+      './src/components/SignupForm.js'
   ],
 
   stats: {
