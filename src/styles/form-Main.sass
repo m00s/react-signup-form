@@ -1,5 +1,6 @@
 @import reset
 @import vars
+@import media
 
 html
   body
@@ -21,6 +22,12 @@ html
     font-weight: 600
     border-radius: 0.3em
     border: 5px solid $form-border
+    +mobile
+      width: 90%
+    +ipad(portrait)
+      width: 70%
+    +ipad(landscape)
+      width: 50%
     .separator
       height: 1px
       background-color: $default
