@@ -11,7 +11,7 @@ var FacebookButton = React.createClass({
         <div id="fb-signing" className="fb-container">
           <button className="fb-button">
           <span className="fb-logo">f </span>
-          Signup with Facebook
+          <span className="fb-text">Signup with Facebook </span>
           </button>
         </div>
       </div>
